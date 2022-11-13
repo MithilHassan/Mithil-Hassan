@@ -29,9 +29,9 @@ export default function Header() {
         </Link>
         <Link
           className="hover:tracking-widest transition-all ease-linear"
-          href="#"
+          href="/contact"
         >
-          Settings
+          Contact
         </Link>
       </nav>
       <div className="flex gap-5">
