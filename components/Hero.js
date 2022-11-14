@@ -9,7 +9,7 @@ import Heading from "./Heading";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-10">
+    <div className="min-h-screen flex items-center justify-center p-5 sm:p-10">
       <div className="customContainer mt-10">
         <Heading text={"Hey There!"} search />
         <div className="relative box w-full h-max p-5 md:p-10 overflow-hidden">
