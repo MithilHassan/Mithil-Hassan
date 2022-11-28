@@ -4,8 +4,10 @@ import Project from "../components/Project";
 import { motion } from "framer-motion";
 import { slideLeftTransition } from "../animation/framerMotion";
 import Head from "next/head";
+import { client } from "../sanity";
 
-export default function projects() {
+export default function projects({ projects }) {
+  console.log(projects);
   return (
     <div>
       <Head>
@@ -18,7 +20,7 @@ export default function projects() {
           <div className="flex items-center mt-20">
             <Heading text={"My Projects"} search />
           </div>
-          <Project />
+          <Project projects={projects} />
         </div>
         <motion.div
           variants={slideLeftTransition}
@@ -30,4 +32,15 @@ export default function projects() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const projects = await client.fetch(
+    `*[_type == "project"] {..., technologies[]->}`
+  );
+  return {
+    props: {
+      projects,
+    },
+  };
 }

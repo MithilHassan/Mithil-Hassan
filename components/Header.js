@@ -12,7 +12,7 @@ export default function Header() {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="fixed top-0 w-full flex items-center justify-between px-5 sm:px-10 py-1 bgDark text-sm sm:text-base z-50"
+      className="fixed top-0 w-full flex items-center justify-between px-5 sm:px-10 py-1 bgDark z-50"
     >
       <nav className="flex gap-3 sm:gap-5">
         <Link
@@ -34,7 +34,7 @@ export default function Header() {
           Contact
         </Link>
       </nav>
-      <div className="flex gap-5">
+      <div className="hidden sm:flex gap-5">
         <Link href="https://github.com/MithilHassan">
           <BsGithub className="hover:scale-125 transition-transform ease-linear" />
         </Link>

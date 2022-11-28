@@ -4,15 +4,14 @@
     "name": "sanity"
   },
   "api": {
-    "projectId": "1n18ofpt",
+    "projectId": "ye7j37oo",
     "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool",
-    "@sanity/google-maps-input"
+    "@sanity/desk-tool"
   ],
   "env": {
     "development": {
