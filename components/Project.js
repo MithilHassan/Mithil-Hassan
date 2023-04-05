@@ -104,9 +104,9 @@ export default function Project({ projects }) {
                 </div>
                 <hr className="border-dashed bg-black my-5" />
                 <div className="flex text-lg gap-5">
-                  {project.technologies?.map((technology) => {
-                    <p>{technology.technology}</p>;
-                  })}
+                  {project?.technologies?.map((technologies, i) => (
+                    <p key={i}>#{technologies?.technology}</p>
+                  ))}
                 </div>
               </div>
             </div>

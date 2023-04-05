@@ -57,9 +57,11 @@ export default function Hero() {
           </div>
           <div className="col-span-9 md:col-span-5 flex flex-col md:flex-row gap-6">
             <Link href="/projects">
-              <Button text={"My Projects"} icon={"code"} filled />
+              <Button text={"My Projects"} icon={"code"} />
             </Link>
-            <Button text={"My Resume"} icon={"arrow"} />
+            <Link href="/contact">
+              <Button text={"Hire Me"} icon={"arrow"} />
+            </Link>
           </div>
         </div>
       </div>

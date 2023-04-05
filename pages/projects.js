@@ -7,7 +7,6 @@ import Head from "next/head";
 import { client } from "../sanity";
 
 export default function projects({ projects }) {
-  console.log(projects);
   return (
     <div>
       <Head>
@@ -36,7 +35,7 @@ export default function projects({ projects }) {
 
 export async function getServerSideProps(context) {
   const projects = await client.fetch(
-    `*[_type == "project"] {..., technologies[]->}`
+    `*[_type == "project"] {..., "technologies": technologies[]->}`
   );
   return {
     props: {

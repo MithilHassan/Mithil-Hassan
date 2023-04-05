@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import {
   BsFillTelephoneFill,
   BsGithub,
@@ -20,7 +20,11 @@ import Button from "../components/Button";
 import Heading from "../components/Heading";
 import Link from "next/link";
 
-export default function contact() {
+export default function Contact() {
+  const [fullname, setFullname] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
   return (
     <div>
       <Head>
@@ -45,30 +49,45 @@ export default function contact() {
           </div>
           <div className="grid grid-cols-4 lg:grid-cols-5 gap-5">
             <div className="col-span-4 md:col-span-2 lg:col-span-3 mb-10 md:mb-0">
-              <div className="grid grid-cols-2 gap-5 text-xl">
+              <form
+                // onSubmit={handleSubmit}
+                className="grid grid-cols-2 gap-5 text-xl"
+              >
                 <input
+                  onChange={(e) => {
+                    setFullname(e.target.value);
+                  }}
                   className="box py-2 px-5 col-span-2 sm:col-span-1 md:col-span-2 lg:col-span-1"
                   type="text"
                   placeholder="Name"
                 />
                 <input
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   className="box py-2 px-5 col-span-2 sm:col-span-1 md:col-span-2 lg:col-span-1"
                   type="text"
                   placeholder="Email"
                 />
                 <input
+                  onChange={(e) => {
+                    setSubject(e.target.value);
+                  }}
                   className="box py-2 px-5 col-span-2"
                   type="text"
                   placeholder="Subject"
                 />
                 <textarea
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                  }}
                   className="box py-2 px-5 col-span-2 h-40"
                   placeholder="Message"
                 ></textarea>
                 <div className="text-xl col-span-2 ml-auto">
                   <Button text={"Send"} icon={"arrow"} />
                 </div>
-              </div>
+              </form>
             </div>
             <div className="col-span-4 md:col-span-2 min-[450px]:text-xl md:text-base xl:text-xl tracking-wide -order-1 md:order-1">
               <motion.div
