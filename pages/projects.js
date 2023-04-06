@@ -35,7 +35,7 @@ export default function projects({ projects }) {
 
 export async function getServerSideProps(context) {
   const projects = await client.fetch(
-    `*[_type == "project"] {..., "technologies": technologies[]->}`
+    `*[_type == "project"] {..., "technologies": technologies[]->} | order(order asc)`
   );
   return {
     props: {

@@ -48,5 +48,11 @@ export default {
       title: "Url",
       type: "url",
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    },
   ],
 };
